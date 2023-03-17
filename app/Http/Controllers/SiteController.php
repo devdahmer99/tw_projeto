@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function exibeHome() {
-        echo "Conteúdo dinâmico Home";
+    public function index() {
+        return view("index");
     }
 
     public function sobre() {
@@ -38,9 +38,9 @@ class SiteController extends Controller
                 'descricao' => 'descricao de teste 3'
             ]
         ];
-    
-        echo $servicos[$id]['nome'];
-        echo '<br/>';
-        echo $servicos[$id]['descricao'];
+
+        return view('servico', [
+            'servico' => $servicos[$id]
+        ]); 
     }
 }

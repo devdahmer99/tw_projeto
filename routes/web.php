@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Saudacao;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -19,7 +20,7 @@ use App\Http\Controllers\SiteController;
 });*/
 
 
-Route::get('/', [SiteController::class, 'exibeHome']);
+Route::get('/', [SiteController::class, 'index']);
 
 Route::get('/sobre', [SiteController::class, 'sobre']);
 
@@ -29,4 +30,4 @@ Route::get('/servicos', [SiteController::class, 'servicos']);
 
 Route::get('/servico/{id?}', [SiteController::class, 'servico']);
 
-Route::get('/saudacao/{nome?}', [SiteController::class, 'saudacao']);
+Route::get('/saudacao/{nome?}', [Saudacao::class]);
